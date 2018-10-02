@@ -1,0 +1,7 @@
+/* 
+  Query para extração de XML de registros integrados do SAP
+*/
+
+select c.docnum, x.xml_stmt
+from sap_itf_dof_cor c, sap_itf_idoc_xml_stmt x
+where docnum = &DOCNUM and c.xml_id = x.xml_id;
