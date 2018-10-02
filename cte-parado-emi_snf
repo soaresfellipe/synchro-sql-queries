@@ -1,0 +1,5 @@
+select cod_referencia, txt_mensagem_erro,edof_codigo, s.* 
+from emi_snf  s
+where ctrl_processamento_snf in (0,2,3) -- 0 Aguardando / 2 Erro / 3 Aguardando
+and edof_codigo='CT-E' 
+and ctrl_dt_inclusao >= trunc(sysdate);
